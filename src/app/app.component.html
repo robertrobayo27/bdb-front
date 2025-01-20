@@ -1,0 +1,14 @@
+<div *ngIf="isLoggedIn; else loginTemplate">
+  <app-header></app-header>
+  <div class="main-layout">
+    <app-sidebar></app-sidebar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-footer></app-footer>  
+</div>
+
+<ng-template #loginTemplate>
+  <app-login (loginSuccess)="updateLoginStatus()"></app-login>
+</ng-template>

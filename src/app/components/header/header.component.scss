@@ -1,0 +1,38 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #343a40;
+    color: #fff;
+  
+    .logo img {
+      height: 50px;
+    }
+  
+    .nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+  
+    .nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+  
+      &:hover {
+        color: #ffc107;
+      }
+    }
+  }
+  nav a,
+  nav button {
+    background: none; /* Elimina el fondo */
+    border: none; /* Elimina los bordes */
+    color: white; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer; /* Hace que se vea como un enlace */
+    padding: 0; /* Elimina el relleno extra */
+  }

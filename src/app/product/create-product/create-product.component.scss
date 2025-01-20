@@ -1,0 +1,29 @@
+.product-detail-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .product-detail-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .product-detail-form .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+  }
+
+  .btn-primary {  
+    background-color: #002c75;  
+    color: white;  
+    border-radius: 10%;   
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 3%;
+    padding-right: 3%;
+    border: none;
+  } 

@@ -1,0 +1,33 @@
+<form [formGroup]="productForm" class="product-detail-form">
+    
+    <h2>Editar Producto</h2>
+    <div class="form-group">
+      <label for="name">Nombre </label>
+      <input id="name" formControlName="name" [(ngModel)]="product.name" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="category">Categoria</label>
+      <select id="category" formControlName="category" [(ngModel)]="product.category" class="form-control">  
+        <option disabled>Selecciona</option>
+        <option value="Calzado">Calzado</option>  
+        <option value="Ropa">Ropa</option>  
+        <option value="Accesorios">Accesorios</option>  
+        <option value="Zapatos">Zapatos</option>  
+        <option value="Cocina">Cocina</option>  
+        <option value="Electrodomestico">Electrodoméstico</option>  
+      </select> 
+    </div>
+  
+    <div class="form-group">
+      <label for="stock">Stock:</label>
+      <input id="stock" formControlName="stock" [(ngModel)]="product.stock" class="form-control">
+    </div>
+  
+    <div class="form-group">
+      <label for="price">Precio:</label>
+      <input id="price" formControlName="price" [(ngModel)]="product.price" class="form-control">
+    </div>
+    <button (click)="update()" class="btn btn-primary">Actualizar</button>
+    <button (click)="exit()" class="btn btn-primary">Inicio</button>
+</form> 

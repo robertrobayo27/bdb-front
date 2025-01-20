@@ -1,0 +1,11 @@
+.main-layout {
+    display: flex;
+  
+    .content {
+      margin-left: 200px; /* Espacio para el sidebar */
+      padding: 2rem;
+      width: calc(100% - 200px); /* Ajustar ancho del contenido */
+      background-color: #f8f9fa; /* Fondo claro */
+      min-height: 100vh;
+    }
+  }

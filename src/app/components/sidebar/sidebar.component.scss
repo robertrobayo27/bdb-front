@@ -1,0 +1,34 @@
+.sidebar {
+    width: 170px;
+    height: 100vh;
+    background-color: #064381;
+    color: #fff;
+    position:absolute;
+    left: 0;
+    padding: 20px;
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 1rem;
+  
+        a {
+          text-decoration: none;
+          color: #ecf0f1;
+          font-size: 1rem;
+          display: block;
+  
+          &:hover {
+            color: #3498db;
+          }
+        }
+      }
+    }
+  }
+  .sidebar-logo {  
+    width: 80%; /* Ajustar el ancho de la imagen */  
+    height: auto; /* Mantener la proporción original */  
+    margin-bottom: 20px; /* Espacio debajo de la imagen */  
+  }  

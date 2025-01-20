@@ -1,0 +1,76 @@
+table {
+    font-family: 'Arial', sans-serif; // Fuente personalizada
+    font-size: 14px; // Tamaño de fuente
+    border-collapse: collapse;
+  
+    // Encabezado
+    thead {
+      th {
+        background-color: #343a40; // Fondo oscuro
+        color: #ffffff; // Texto blanco
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #454d55; // Borde en el encabezado
+      }
+    }
+  
+    // Filas del cuerpo
+    tbody {
+      tr {
+        &:nth-child(odd) {
+          background-color: #f8f9fa; // Fondo para filas impares
+        }
+        &:nth-child(even) {
+          background-color: #ffffff; // Fondo para filas pares
+        }
+  
+        &:hover {
+          background-color: #f1f3f5; // Fondo al pasar el mouse
+          cursor: pointer; // Cambia el cursor al pasar el mouse
+        }
+      }
+  
+      td {
+        text-align: left; // Alineación del texto
+        padding: 10px;
+        border: 1px solid #dee2e6; // Borde entre celdas
+      }
+  
+      // Botones en las acciones
+      button {
+        margin: 0 5px; // Espaciado entre botones
+        transition: all 0.3s ease-in-out;
+  
+        &.btn-primary {
+          background-color: #0e3e70;
+          border-color: #0056b3;
+  
+          &:hover {
+            background-color: #0056b3;
+            border-color: #003865;
+          }
+        }
+  
+        &.btn-danger {
+          background-color: #9b2531;
+          border-color: #a71d2a;
+  
+          &:hover {
+            background-color: #a71d2a;
+            border-color: #7b1320;
+          }
+        }
+      }
+    }
+  }
+  
+  // Ajustes para contenedor
+  .container {
+    margin-top: 20px;
+  
+    h2 {
+      font-size: 24px;
+      color: #333333; // Color del título
+      margin-bottom: 15px;
+    }
+  }
