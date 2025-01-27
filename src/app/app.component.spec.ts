@@ -41,7 +41,7 @@ describe('AppComponent', () => {
 
   it('should toggle isSidebarHidden', () => {  
     expect(component.isSidebarHidden).toBe(false);  
-    component.onSidebarToggle(true);  
+    component.onSidebarToggle();  
     expect(component.isSidebarHidden).toBe(true);  
   });  
 

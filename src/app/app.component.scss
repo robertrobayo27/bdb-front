@@ -3,14 +3,13 @@
   height: 100vh; /* Altura completa de la ventana */
 }
 
-.sidebar {
-
-  transition: width 0.5s ease, margin-left 0.5s ease; /* Animaciones suaves */
+.sidebar { 
+  transition: width 0.3s; /* Transición suave */  
 }
 
 .sidebar.hidden {
-  width: 0; /* Ocultar el ancho del sidebar */
-  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+  width: 0; /* Oculta el sidebar */  
+  overflow: hidden; /* Evita que se muestre contenido oculto */ 
 }
 
 .content {
@@ -18,6 +17,7 @@
   transition: margin-left 0.3s ease; /* Animación suave */
 }
 
-.content.expanded {
-  margin-left: 0; /* Sin margen cuando el sidebar está oculto */
+
+.content {  
+  margin-left: 0; /* Sin margen si el sidebar está oculto */  
 }

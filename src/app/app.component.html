@@ -1,15 +1,19 @@
-<div *ngIf="isLoggedIn; else loginTemplate">
-  <app-header></app-header>
-  <div class="main-layout">
-    <app-sidebar class="sidebar" [class.hidden]="isSidebarHidden" 
-    (sidebarToggle)="onSidebarToggle($event)"></app-sidebar>
-    <div class="content" [class.expanded]="isSidebarHidden">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<div *ngIf="isLoggedIn; else loginTemplate">  
+  <app-header></app-header>  
+  <div class="main-layout">  
+    <app-sidebar   
+      class="sidebar"   
+      [ngClass]="{'hidden': isSidebarHidden}"   
+      (sidebarToggle)="onSidebarToggle()">  
+    </app-sidebar>  
+    
+    <div class="content" [ngClass]="{'expanded': !isSidebarHidden, 'collapsed': isSidebarHidden}">  
+      <router-outlet></router-outlet>  
+    </div>  
+  </div>  
   <app-footer></app-footer>  
-</div>
+</div>  
 
-<ng-template #loginTemplate>
-  <app-login (loginSuccess)="updateLoginStatus()"></app-login>
-</ng-template>
+<ng-template #loginTemplate>  
+  <app-login (loginSuccess)="updateLoginStatus()"></app-login>  
+</ng-template>  

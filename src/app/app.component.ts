@@ -21,8 +21,8 @@ export class AppComponent implements OnInit{
   isSidebarHidden = false; // Inicializa el estado
 
   // Método que actualiza el estado cuando se emite el evento
-  onSidebarToggle(hidden: boolean) {
-    this.isSidebarHidden = hidden;
+  onSidebarToggle() {
+    this.isSidebarHidden = !this.isSidebarHidden;
   }
 
   constructor(private authService: AuthService) {}  

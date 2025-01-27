@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of list ">
+        <tr *ngFor="let product of paginatedProducts ">
           <td style="text-align: center;">{{product.id}}</td>
           <td>{{product.name}}</td>
           <td>{{product.category}}</td>
@@ -26,4 +26,17 @@
        
       </tbody>
     </table>
+    <nav aria-label="Page navigation">  
+      <ul class="pagination">  
+        <li class="page-item" [class.disabled]="currentPage === 1">  
+          <a class="page-link" (click)="changePage(currentPage - 1)">Previous</a>  
+        </li>  
+        <li class="page-item" *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="currentPage === i + 1">  
+          <a class="page-link" (click)="changePage(i + 1)">{{ i + 1 }}</a>  
+        </li>  
+        <li class="page-item" [class.disabled]="currentPage === totalPages">  
+          <a class="page-link" (click)="changePage(currentPage + 1)">Next</a>  
+        </li>  
+      </ul>  
+    </nav>  
   </div>
