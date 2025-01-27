@@ -18,6 +18,13 @@ export class AppComponent implements OnInit{
 
   isLoggedIn : boolean = false;
 
+  isSidebarHidden = false; // Inicializa el estado
+
+  // Método que actualiza el estado cuando se emite el evento
+  onSidebarToggle(hidden: boolean) {
+    this.isSidebarHidden = hidden;
+  }
+
   constructor(private authService: AuthService) {}  
 
   ngOnInit() {  
@@ -25,7 +32,6 @@ export class AppComponent implements OnInit{
   
     this.authService.isLoggedIn$.subscribe((loggedIn : any) => {  
       this.isLoggedIn = loggedIn;  
-      console.log("valor de isLoggedIn desde app component", this.isLoggedIn);  
     });  
 
     this.updateLoginStatus();  

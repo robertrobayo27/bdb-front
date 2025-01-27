@@ -19,10 +19,10 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
-    "@types/jest": "^29.5.14",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
-    "sweetalert2": "^11.15.10",
+    "sweetalert2": "^11.6.13",
+    "ts-node": "^10.9.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
@@ -32,9 +32,10 @@
     "@angular/cli": "^19.0.7",
     "@angular/compiler-cli": "^19.0.0",
     "@types/jasmine": "~5.1.0",
+    "@types/jest": "^29.5.14",
     "jasmine-core": "~5.4.0",
     "jest": "^29.7.0",
-    "jest-preset-angular": "^14.5.0",
+    "jest-preset-angular": "^14.5.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
@@ -46,7 +47,7 @@
   "jest": {
     "preset ": "jest-preset-angular",
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setup-jest.ts"
+      "<rootDir>/src/jest.config.ts"
     ],
     "testPathignorePatterns": [
       "<rootDir>/node_modules/",

@@ -1,10 +1,11 @@
-<aside class="sidebar">
-  <h5>Menú</h5>
-  <hr>
+<button class="toggle-btn" (click)="toggleSidebar()">☰ Menú</button>
+<aside class="sidebar" [class.hidden]="isSidebarHidden">
+  <img src="assets/bdb.png" alt="Logo">
+  <hr />
   <h6>Producto</h6>
-<br>
+  <br />
   <ul>
-    <li><a href="/create-product">Crear Producto</a></li>
-    <li><a href="/list-products">Listado Productos</a></li>
+    <li><a (click)= "createProduct()">Crear Producto</a></li>
+    <li><a (click)="listProducts()">Listado Productos</a></li>
   </ul>
 </aside>

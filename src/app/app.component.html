@@ -1,8 +1,9 @@
 <div *ngIf="isLoggedIn; else loginTemplate">
   <app-header></app-header>
   <div class="main-layout">
-    <app-sidebar></app-sidebar>
-    <div class="content">
+    <app-sidebar class="sidebar" [class.hidden]="isSidebarHidden" 
+    (sidebarToggle)="onSidebarToggle($event)"></app-sidebar>
+    <div class="content" [class.expanded]="isSidebarHidden">
       <router-outlet></router-outlet>
     </div>
   </div>

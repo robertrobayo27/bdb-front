@@ -18,8 +18,7 @@ export class CreateProductComponent implements OnInit{
       private fb: FormBuilder,
       private productService: ProductService,
       private generalService: GeneralService,
-      private router: Router,
-      private route: ActivatedRoute
+      private router: Router
     ) {}
   
     public type : any;

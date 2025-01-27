@@ -57,27 +57,3 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-
-# Proyecto Angular
-
-Este es un proyecto Angular que puedes ejecutar localmente para probar y desarrollar.
-
-## Requisitos previos
-
-Antes de comenzar, asegúrate de tener instalados los siguientes programas en tu máquina:
-
-1. **Node.js**: [Instalar Node.js](https://nodejs.org/) (recomendado LTS)
-2. **Angular CLI**: Si no tienes Angular CLI instalado, puedes hacerlo ejecutando el siguiente comando en tu terminal:
-   ```bash
-   npm install -g @angular/cli
-   
-   
-3. Ejecutar comando para clonar Proyecto
-	git clone https://github.com/robertrobayo27/bdb-front.git
-   
-4. Ingresar a la raiz del proyecto y ejecutar comando
-	npm install
-	
-5. INiciar proyecto con ng serve
-   

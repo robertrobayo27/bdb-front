@@ -1,29 +1,53 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AuthService } from '../services/auth.service';
+import { of } from 'rxjs';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+  let component: AppComponent;  
+  let fixture: ComponentFixture<AppComponent>;  
+  let authServiceMock: any;  
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+  beforeEach(async () => {  
+    authServiceMock = {  
+      isLoggedIn: jest.fn(),  
+      isLoggedIn$: of(false), // Inicialmente falso  
+    };  
 
-  it(`should have the 'bdb-front' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('bdb-front');
-  });
+    await TestBed.configureTestingModule({  
+      declarations: [AppComponent],  
+      providers: [{ provide: AuthService, useValue: authServiceMock }],  
+      schemas: [NO_ERRORS_SCHEMA], // Evita errores de componentes no declarados  
+    }).compileComponents();  
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('bdb-front');
-  });
-});
+    fixture = TestBed.createComponent(AppComponent);  
+    component = fixture.componentInstance;  
+  });  
+
+  it('should create the component', () => {  
+    expect(component).toBeTruthy();  
+  });  
+
+  it('should initialize title', () => {  
+    expect(component.title).toEqual('bdb-front');  
+  });  
+
+  it('should set isLoggedIn correctly on ngOnInit', () => {  
+    authServiceMock.isLoggedIn.mockReturnValueOnce(true); // Simula que el usuario está logueado  
+    component.ngOnInit();  
+    expect(component.isLoggedIn).toBe(true);  
+  });  
+
+  it('should toggle isSidebarHidden', () => {  
+    expect(component.isSidebarHidden).toBe(false);  
+    component.onSidebarToggle(true);  
+    expect(component.isSidebarHidden).toBe(true);  
+  });  
+
+  it('should log the value of isLoggedIn', () => {  
+    const consoleSpy = jest.spyOn(console, 'log');  
+    component.updateLoginStatus();  
+    expect(consoleSpy).toHaveBeenCalledWith("valor de isLoggedIn desde app component", false);  
+  });  
+});  
